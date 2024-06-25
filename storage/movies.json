@@ -1,0 +1,26 @@
+[
+    {
+        "movie_id": 101,
+        "title": "Inception",
+        "genre": "Sci-Fi",
+        "year": 2010,
+        "director": "Christopher Nolan",
+        "rating": 8.8
+    },
+    {
+        "movie_id": 102,
+        "title": "The Matrix",
+        "genre": "Sci-Fi",
+        "year": 1999,
+        "director": "The Wachowskis",
+        "rating": 8.7
+    },
+    {
+        "movie_id": 103,
+        "title": "The Godfather",
+        "genre": "Crime",
+        "year": 1972,
+        "director": "Francis Ford Coppola",
+        "rating": 9.2
+    }
+]

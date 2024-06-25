@@ -1,0 +1,28 @@
+[
+    {
+        "user_id": 1,
+        "username": "john_doe",
+        "email": "john_doe@example.com",
+        "favorite_movies": [
+            101,
+            102
+        ]
+    },
+    {
+        "user_id": 2,
+        "username": "jane_smith",
+        "email": "jane_smith@example.com",
+        "favorite_movies": [
+            103
+        ]
+    },
+    {
+        "user_id": 3,
+        "username": "jane_morgan",
+        "email": "jane_morgan@example.com",
+        "favorite_movies": [
+            103,
+            102
+        ]
+    }
+]
