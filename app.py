@@ -1,10 +1,32 @@
 from flask import Flask, render_template, request, redirect, url_for
+import requests
 from datamanager.json_data_manager import JSONDatabaseManager
 
 app = Flask(__name__)
 
 # Initialize the JSONDatabaseManager
 db_manager = JSONDatabaseManager('storage/users.json', 'storage/movies.json')
+
+OMDB_API_KEY = 'bde1b2d6'  # Replace with your actual OMDb API key
+
+
+def fetch_movie_details(title):
+    """Fetch movie details from OMDb API."""
+    url = f"http://www.omdbapi.com/?t={title}&apikey={OMDB_API_KEY}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
+    return None
+
+
+def parse_year(year_string):
+    """Parse the year string to extract the starting year."""
+    try:
+        # Attempt to convert the year string to an integer directly
+        return int(year_string[:4])
+    except ValueError:
+        # Return None or a default year if parsing fails
+        return None
 
 
 # Routes
@@ -24,6 +46,7 @@ def user_movies(user_id):
     user = db_manager.get_by_id('users', user_id)
     if user:
         user_favorite_movies = [db_manager.get_by_id('movies', movie_id) for movie_id in user['favorite_movies']]
+        user_favorite_movies = [movie for movie in user_favorite_movies if movie is not None]  # Filter out None values
         return render_template('user_movies.html', user=user, movies=user_favorite_movies)
     return "User not found", 404
 
@@ -48,13 +71,21 @@ def add_movie(user_id):
         return "User not found", 404
 
     if request.method == 'POST':
+        title = request.form['title']
+        movie_details = fetch_movie_details(title)
+
+        if not movie_details or movie_details['Response'] == 'False':
+            return "Movie not found", 404
+
         new_movie = {
-            "title": request.form['title'],
-            "genre": request.form['genre'],
-            "year": int(request.form['year']),
-            "director": request.form['director'],
-            "rating": float(request.form['rating'])
+            "title": movie_details['Title'],
+            "genre": movie_details['Genre'],
+            "year": parse_year(movie_details['Year']),
+            "director": movie_details['Director'],
+            "rating": float(movie_details['imdbRating']),
+            "image_url": movie_details['Poster']
         }
+
         added_movie = db_manager.add('movies', new_movie)
         user['favorite_movies'].append(added_movie['movie_id'])
         db_manager.update('users', user_id, user)
@@ -75,6 +106,7 @@ def update_movie(user_id, movie_id):
         movie['year'] = int(request.form['year'])
         movie['director'] = request.form['director']
         movie['rating'] = float(request.form['rating'])
+        movie['image_url'] = request.form['image_url']
         db_manager.update('movies', movie_id, movie)
         return redirect(url_for('user_movies', user_id=user_id))
     return render_template('update_movie.html', user=user, movie=movie)

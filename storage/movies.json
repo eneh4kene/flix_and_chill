@@ -5,7 +5,8 @@
         "genre": "Sci-Fi",
         "year": 2010,
         "director": "Christopher Nolan",
-        "rating": 9.0
+        "rating": 8.8,
+        "image_url": "https://path_to_inception_image.jpg"
     },
     {
         "movie_id": 102,
@@ -13,7 +14,8 @@
         "genre": "Sci-Fi",
         "year": 1999,
         "director": "The Wachowskis",
-        "rating": 8.7
+        "rating": 8.7,
+        "image_url": "https://m.media-amazon.com/images/M/MV5BYzUzOTA5ZTMtMTdlZS00MmQ5LWFmNjEtMjE5MTczN2RjNjE3XkEyXkFqcGdeQXVyNTc2ODIyMzY@._V1_SX300.jpg"
     },
     {
         "movie_id": 103,
@@ -21,14 +23,52 @@
         "genre": "Crime",
         "year": 1972,
         "director": "Francis Ford Coppola",
-        "rating": 9.2
+        "rating": 9.2,
+        "image_url": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
     },
     {
-        "title": "Atlas",
-        "genre": "sci-fi",
-        "year": 2024,
-        "director": "iono",
-        "rating": 8.0,
-        "movie_id": 104
+        "title": "Punisher",
+        "genre": "Short",
+        "year": 1988,
+        "director": "N/A",
+        "rating": 6.3,
+        "image_url": "N/A",
+        "movie_id": 105
+    },
+    {
+        "title": "Prince",
+        "genre": "Action, Drama, Romance",
+        "year": 2022,
+        "director": "Anudeep K.V.",
+        "rating": 4.4,
+        "image_url": "https://m.media-amazon.com/images/M/MV5BZWE4YTBmNGQtNjQ2Ny00OTRhLWJlZjYtZDJlNzE2NWI0NTZhXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_SX300.jpg",
+        "movie_id": 106
+    },
+    {
+        "title": "Time",
+        "genre": "Crime, Drama",
+        "year": 2021,
+        "director": "N/A",
+        "rating": 8.2,
+        "image_url": "https://m.media-amazon.com/images/M/MV5BNjM5N2RlNDgtNjM0OS00N2ZhLWJlYjgtNTdmNDVjMWM1ZmUzXkEyXkFqcGdeQXVyNjI2OTgxNzY@._V1_SX300.jpg",
+        "movie_id": 107
+    },
+    {
+        "title": "Harold & Kumar Escape from Guantanamo Bay",
+        "genre": "Adventure, Comedy",
+        "year": 2008,
+        "director": "Jon Hurwitz, Hayden Schlossberg",
+        "rating": 6.5,
+        "image_url": "https://m.media-amazon.com/images/M/MV5BMTQ3NTg3OTk0OV5BMl5BanBnXkFtZTcwODAwMzU1MQ@@._V1_SX300.jpg",
+        "movie_id": 108
+    },
+    {
+        "title": "Baby's Day Out",
+        "genre": "Adventure, Comedy, Crime",
+        "year": 1994,
+        "director": "Patrick Read Johnson",
+        "rating": 6.2,
+        "image_url": "https://m.media-amazon.com/images/M/MV5BMzI3NmQ1ZDUtZWQ1My00NzlkLWE5OGQtZjZkYWJmYzYwY2QxXkEyXkFqcGdeQXVyNDQ2MTMzODA@._V1_SX300.jpg",
+        "movie_id": 109
     }
 ]

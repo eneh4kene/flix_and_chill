@@ -5,6 +5,7 @@
 <div class="movie-grid">
     {% for movie in movies %}
     <div class="movie-card">
+        <img src="{{ movie.image_url }}" alt="{{ movie.title }} poster" class="movie-poster">
         <h3>{{ movie.title }}</h3>
         <p>{{ movie.year }} - {{ movie.genre }}</p>
         <p>Director: {{ movie.director }}</p>

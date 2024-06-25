@@ -6,7 +6,8 @@
         "favorite_movies": [
             101,
             102,
-            104
+            104,
+            107
         ]
     },
     {
@@ -14,7 +15,9 @@
         "username": "jane_smith",
         "email": "jane_smith@example.com",
         "favorite_movies": [
-            103
+            103,
+            105,
+            106
         ]
     },
     {
@@ -29,7 +32,10 @@
     {
         "username": "michael",
         "email": "eneh4kene@gmail.com",
-        "favorite_movies": [],
+        "favorite_movies": [
+            108,
+            109
+        ],
         "user_id": 4
     }
 ]

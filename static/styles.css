@@ -109,6 +109,13 @@ form button:hover {
     text-align: center;
 }
 
+.movie-card img.movie-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
 .movie-card h3 {
     margin: 0.5em 0;
 }
