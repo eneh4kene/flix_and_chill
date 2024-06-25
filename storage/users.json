@@ -7,7 +7,7 @@
             101,
             102,
             104,
-            107
+            110
         ]
     },
     {
@@ -37,5 +37,15 @@
             109
         ],
         "user_id": 4
+    },
+    {
+        "username": "Alice",
+        "email": "joy.ogoamaka@ena.com",
+        "favorite_movies": [
+            111,
+            112,
+            113
+        ],
+        "user_id": 5
     }
 ]
