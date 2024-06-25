@@ -1,6 +1,6 @@
 import json
 from typing import Dict, List
-from data_manager_interface import DatabaseManagerInterface
+from datamanager.data_manager_interface import DatabaseManagerInterface
 
 
 class JSONDatabaseManager(DatabaseManagerInterface):

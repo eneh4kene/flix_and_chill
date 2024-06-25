@@ -5,7 +5,8 @@
         "email": "john_doe@example.com",
         "favorite_movies": [
             101,
-            102
+            102,
+            104
         ]
     },
     {
@@ -24,5 +25,11 @@
             103,
             102
         ]
+    },
+    {
+        "username": "michael",
+        "email": "eneh4kene@gmail.com",
+        "favorite_movies": [],
+        "user_id": 4
     }
 ]

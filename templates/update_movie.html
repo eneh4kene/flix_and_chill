@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Update Movie for {{ user.username }}</h1>
+<form method="post">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="{{ movie.title }}" required>
+    <label for="genre">Genre:</label>
+    <input type="text" id="genre" name="genre" value="{{ movie.genre }}" required>
+    <label for="year">Year:</label>
+    <input type="number" id="year" name="year" value="{{ movie.year }}" required>
+    <label for="director">Director:</label>
+    <input type="text" id="director" name="director" value="{{ movie.director }}" required>
+    <label for="rating">Rating:</label>
+    <input type="number" step="0.1" id="rating" name="rating" value="{{ movie.rating }}" required>
+    <button type="submit">Update Movie</button>
+</form>
+{% endblock %}

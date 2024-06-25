@@ -5,7 +5,7 @@
         "genre": "Sci-Fi",
         "year": 2010,
         "director": "Christopher Nolan",
-        "rating": 8.8
+        "rating": 9.0
     },
     {
         "movie_id": 102,
@@ -22,5 +22,13 @@
         "year": 1972,
         "director": "Francis Ford Coppola",
         "rating": 9.2
+    },
+    {
+        "title": "Atlas",
+        "genre": "sci-fi",
+        "year": 2024,
+        "director": "iono",
+        "rating": 8.0,
+        "movie_id": 104
     }
 ]

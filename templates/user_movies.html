@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ user.username }}'s Favorite Movies</h1>
+<div class="movie-grid">
+    {% for movie in movies %}
+    <div class="movie-card">
+        <h3>{{ movie.title }}</h3>
+        <p>{{ movie.year }} - {{ movie.genre }}</p>
+        <p>Director: {{ movie.director }}</p>
+        <p>Rating: {{ movie.rating }}</p>
+        <a href="{{ url_for('update_movie', user_id=user.user_id, movie_id=movie.movie_id) }}">Update</a>
+        <a href="{{ url_for('delete_movie', user_id=user.user_id, movie_id=movie.movie_id) }}">Delete</a>
+    </div>
+    {% endfor %}
+</div>
+<a href="{{ url_for('add_movie', user_id=user.user_id) }}" class="btn">Add Movie</a>
+{% endblock %}
