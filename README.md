@@ -1,9 +1,9 @@
 Sure! Here's a comprehensive `README.md` file for your GitHub repository:
 
 ```markdown
-# MovieWeb App
+# FLix and Chill
 
-MovieWeb App is a web application that allows users to pick their identity and then view, add, update, or delete movies from their personalized favorite movie list. The application uses Flask for the backend and integrates with the OMDb API to fetch movie details.
+Flix and Chill is a web application that allows users to pick their identity and then view, add, update, or delete movies from their personalized favorite movie list. The application uses Flask for the backend and integrates with the OMDb API to fetch movie details.
 
 ## Features
 
