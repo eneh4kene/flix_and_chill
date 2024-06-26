@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieWeb App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
@@ -10,13 +9,17 @@
     <nav>
         <ul>
             <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('users_list') }}">Users List</a></li>
-            <li><a href="{{ url_for('add_user') }}">Add User</a></li>
-        </ul>
+            {% if 'username' in session %}
+                <span>Welcome, {{ session['username'] }}!</span>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
+         </ul>
     </nav>
-    <div id="content">
-        {% block content %}{% endblock %}
-    </div>
+    {% block content %}{% endblock %}
+
     <footer class="footer">
         <p>MovieWeb App &copy; 2024</p>
     </footer>

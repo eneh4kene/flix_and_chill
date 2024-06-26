@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import requests
 from datamanager.json_data_manager import JSONDatabaseManager
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Replace with your generated secret key
 
 # Initialize the JSONDatabaseManager
 db_manager = JSONDatabaseManager('storage/users.json', 'storage/movies.json')
@@ -36,6 +38,62 @@ def home():
     return render_template('index.html')
 
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    """Render the registration page and handle user registration."""
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+        hashed_password = generate_password_hash(password)
+
+        users = db_manager.get_all('users')
+        new_user_id = max(user['user_id'] for user in users) + 1 if users else 1
+
+        new_user = {
+            "user_id": new_user_id,
+            "username": username,
+            "email": email,
+            "password": hashed_password,
+            "favorite_movies": []
+        }
+
+        db_manager.add('users', new_user)
+        return redirect(url_for('login'))
+    return render_template('register.html')
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    """Render the login page and handle user login."""
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        users = db_manager.get_all('users')
+
+        user = next((u for u in users if u['username'] == username), None)
+        if user:
+            if 'password' not in user:
+                return render_template('error.html', message="Password field is missing for this user"), 400
+            if check_password_hash(user['password'], password):
+                session['user_id'] = user['user_id']
+                session['username'] = user['username']
+                return redirect(url_for('home'))
+            else:
+                return render_template('error.html', message="Invalid password"), 401
+        else:
+            return render_template('error.html', message="Invalid username"), 401
+    return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+    """Handle user logout."""
+    session.pop('user_id', None)
+    session.pop('username', None)
+    return redirect(url_for('home'))
+
+
 @app.route('/users')
 def users_list():
     """Render the users list page."""
@@ -46,6 +104,9 @@ def users_list():
 @app.route('/users/<int:user_id>')
 def user_movies(user_id):
     """Render the user movies page."""
+    if 'user_id' not in session or session['user_id'] != user_id:
+        return render_template('error.html', message="Unauthorized access"), 403
+
     user = db_manager.get_by_id('users', user_id)
     if user:
         user_favorite_movies = [db_manager.get_by_id('movies', movie_id) for movie_id in user['favorite_movies']]
@@ -56,21 +117,17 @@ def user_movies(user_id):
 
 @app.route('/add_user', methods=['GET', 'POST'])
 def add_user():
-    """Render the add user page and handle user creation."""
-    if request.method == 'POST':
-        new_user = {
-            "username": request.form['username'],
-            "email": request.form['email'],
-            "favorite_movies": []
-        }
-        db_manager.add('users', new_user)
-        return redirect(url_for('users_list'))
-    return render_template('add_user.html')
+    """redirect to user registration"""
+    return redirect(url_for('register'))
+
 
 
 @app.route('/users/<int:user_id>/add_movie', methods=['GET', 'POST'])
 def add_movie(user_id):
     """Render the add movie page and handle movie creation."""
+    if 'user_id' not in session or session['user_id'] != user_id:
+        return render_template('error.html', message="Unauthorized access"), 403
+
     user = db_manager.get_by_id('users', user_id)
     if not user:
         return render_template('error.html', message="User not found"), 404
@@ -101,6 +158,9 @@ def add_movie(user_id):
 @app.route('/users/<int:user_id>/update_movie/<int:movie_id>', methods=['GET', 'POST'])
 def update_movie(user_id, movie_id):
     """Render the update movie page and handle movie update."""
+    if 'user_id' not in session or session['user_id'] != user_id:
+        return render_template('error.html', message="Unauthorized access"), 403
+
     user = db_manager.get_by_id('users', user_id)
     movie = db_manager.get_by_id('movies', movie_id)
     if not user or not movie:
@@ -124,6 +184,9 @@ def update_movie(user_id, movie_id):
 @app.route('/users/<int:user_id>/delete_movie/<int:movie_id>', methods=['GET', 'POST'])
 def delete_movie(user_id, movie_id):
     """Render the delete movie page and handle movie deletion."""
+    if 'user_id' not in session or session['user_id'] != user_id:
+        return render_template('error.html', message="Unauthorized access"), 403
+
     user = db_manager.get_by_id('users', user_id)
     movie = db_manager.get_by_id('movies', movie_id)
     if not user or not movie:

@@ -1,51 +1,26 @@
 [
     {
         "user_id": 1,
-        "username": "john_doe",
-        "email": "john_doe@example.com",
-        "favorite_movies": [
-            101,
-            102,
-            104,
-            110
-        ]
+        "username": "michael",
+        "email": "eneh4kene@gmail.com",
+        "password": "scrypt:32768:8:1$HoOqvfLVSsfdCEhD$d69d0def9b90a7c148cc30448ddbe587b4dd33566ce55c170511f055e678574673546c2f80777e0e4d28e13405e4cc50743661295cb476d5ada6698bb1e068a3",
+        "favorite_movies": []
     },
     {
         "user_id": 2,
-        "username": "jane_smith",
-        "email": "jane_smith@example.com",
-        "favorite_movies": [
-            103,
-            105,
-            106
-        ]
+        "username": "Alice",
+        "email": "eneh4kene@gmail.com",
+        "password": "scrypt:32768:8:1$jaYdNwVBXv4817vp$a0440f888ad69df49a36357e09a406c33b967a2d9dfa8831a5f25b8d6a4df948dc30d2086be5d5f3ba6a61977a63dba36c926c7b05feab45b2abcba52f093477",
+        "favorite_movies": []
     },
     {
         "user_id": 3,
-        "username": "jane_morgan",
-        "email": "jane_morgan@example.com",
+        "username": "kene",
+        "email": "kene4eneh@gmail.com",
+        "password": "scrypt:32768:8:1$DF6c5FK9bdp0sdm6$4a2ad4b17fe39116bc4ad974faedcef314ea0a79a3959c4a814a1733dd15a86bbc09a59c3d99c63d397fb58a96a584ccf235df96c79d81f5bd298b2265e382f3",
         "favorite_movies": [
-            103,
-            102
+            114,
+            115
         ]
-    },
-    {
-        "username": "michael",
-        "email": "eneh4kene@gmail.com",
-        "favorite_movies": [
-            108,
-            109
-        ],
-        "user_id": 4
-    },
-    {
-        "username": "Alice",
-        "email": "joy.ogoamaka@ena.com",
-        "favorite_movies": [
-            111,
-            112,
-            113
-        ],
-        "user_id": 5
     }
 ]

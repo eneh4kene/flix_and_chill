@@ -8,7 +8,12 @@ body {
 
 nav {
     background-color: #e50914;
-    padding: 1em;
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+
 }
 
 nav ul {
@@ -36,7 +41,13 @@ nav ul li a {
 
 h1 {
     color: #e50914;
-    font-size: 2em;
+    font-size: 3em;
+    text-align:center;
+}
+
+span {
+    color: #e50914;
+    font-size: 1.5em;
 }
 
 ul {
@@ -56,8 +67,22 @@ ul li a {
     text-decoration: none;
 }
 
+
 ul li a:hover {
     text-decoration: underline;
+}
+
+p {
+    background-color: #333;
+    padding: 2em;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+p a {
+    color: #e50914;
+    text-decoration: none;
 }
 
 form {

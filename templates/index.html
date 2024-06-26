@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Welcome to MovieWeb App</h1>
-<p>Your personalized movie list manager.</p>
+<h1>Flix & Chill</h1>
+{% if 'username' in session %}
+    <p>Welcome back, {{ session['username'] }}!</p>
+    <p><a href="{{ url_for('users_list') }}">View Users</a></p>
+    <p><a href="{{ url_for('add_user') }}">Add New User</a></p>
+{% else %}
+    <p>Please <a href="{{ url_for('login') }}">login</a> or <a href="{{ url_for('register') }}">register</a> to manage your favorite movies.</p>
+{% endif %}
 {% endblock %}
