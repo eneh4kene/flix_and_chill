@@ -121,7 +121,6 @@ def add_user():
     return redirect(url_for('register'))
 
 
-
 @app.route('/users/<int:user_id>/add_movie', methods=['GET', 'POST'])
 def add_movie(user_id):
     """Render the add movie page and handle movie creation."""

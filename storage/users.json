@@ -4,7 +4,8 @@
         "username": "michael",
         "email": "eneh4kene@gmail.com",
         "password": "scrypt:32768:8:1$HoOqvfLVSsfdCEhD$d69d0def9b90a7c148cc30448ddbe587b4dd33566ce55c170511f055e678574673546c2f80777e0e4d28e13405e4cc50743661295cb476d5ada6698bb1e068a3",
-        "favorite_movies": []
+        "favorite_movies": [],
+        "profile_picture": "url_to_profile_picture"
     },
     {
         "user_id": 2,
