@@ -4,7 +4,6 @@ certifi==2024.6.2
 charset-normalizer==3.3.2
 chex==0.1.86
 click==8.1.7
-etils==1.9.2
 Flask==3.0.3
 flax==0.8.4
 fsspec==2024.6.0
