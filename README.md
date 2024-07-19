@@ -2,7 +2,7 @@
 
 Flix and Chill is a web application that allows users to pick their identity and then view, add, update, or delete movies from their personalized favorite movie list. The application uses Flask for the backend and integrates with the OMDb API to fetch movie details.
 
-**Features**
+## Features
 
 - User Authentication (Registration, Login, Logout)
 - Personalized User Profiles
@@ -11,7 +11,7 @@ Flix and Chill is a web application that allows users to pick their identity and
 - Delete Movies from Favorite List
 - Fetch Movie Details from OMDb API
 
-**Tech Stack**
+## Tech Stack
 
 - **Backend**: Flask, Python
 - **Frontend**: Jinja2 Templates, HTML, CSS
@@ -19,14 +19,14 @@ Flix and Chill is a web application that allows users to pick their identity and
 - **APIs**: OMDb API
 - **Deployment**: PythonAnywhere
 
-**Installation**
+## Installation
 
-**Prerequisites**
+### Prerequisites
 
 - Python 3.x
 - pip (Python package installer)
 
-**Setup**
+### Setup
 
 1. **Clone the repository:**
 
@@ -65,13 +65,13 @@ Flix and Chill is a web application that allows users to pick their identity and
 
    The application will be available at `http://127.0.0.1:5000/`.
 
-**Usage**
+## Usage
 
-**Home Page**
+### Home Page
 
 Visit the home page to login or register a new account.
 
-**User Profile**
+### User Profile
 After logging in, you can view your profile, which includes your favorite movie list.
 
 ### Add Movie
@@ -82,11 +82,11 @@ Navigate to the add movie page to add a new movie to your favorite list. The app
 
 You can update the details of any movie in your favorite list by navigating to the update movie page.
 
-**Delete Movie**
+### Delete Movie
 
 To delete a movie from your favorite list, go to the delete movie page.
 
-**Deployment**
+## Deployment
 This project can be deployed to PythonAnywhere. Follow the steps below:
 
 1. **Upload Files:**
