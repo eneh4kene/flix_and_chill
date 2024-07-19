@@ -1,4 +1,4 @@
-**FLix and Chill**
+# FLix and Chill
 
 Flix and Chill is a web application that allows users to pick their identity and then view, add, update, or delete movies from their personalized favorite movie list. The application uses Flask for the backend and integrates with the OMDb API to fetch movie details.
 
@@ -78,7 +78,7 @@ After logging in, you can view your profile, which includes your favorite movie 
 
 Navigate to the add movie page to add a new movie to your favorite list. The application will fetch movie details from the OMDb API.
 
-**Update Movie**
+### Update Movie
 
 You can update the details of any movie in your favorite list by navigating to the update movie page.
 
